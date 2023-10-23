@@ -112,6 +112,7 @@ Using Javascript for test
   let quoteSample = "Blueberry 3.141592653s are delicious.";
   let myRegex = /[h-s2-6]/ig; // Change this line
   let result = quoteSample.match(myRegex); // Change this line
+  // Return ['l', 'r', 'r', '3', '4', '5', '2', '6', '5', '3', 's', 'r', 'l', 'i', 'i', 'o', 's']
 ```
 
 #### Match Single Characters Not Specified
@@ -120,6 +121,7 @@ Using Javascript for test
   let quoteSample = "3 blind mice.";
   let myRegex = /[^aeiou.!{@}]/gi; // Change this line
   let result = quoteSample.match(myRegex); // Change this line
+  // Return ['3', ' ', 'b', 'l', 'n', 'd', ' ', 'm', 'c']
 ```
 
 #### Match Characters that Occur One or More Times
@@ -128,6 +130,7 @@ Using Javascript for test
   let difficultSpelling = "Mississippi";
   let myRegex = /s+/g; // Change this line
   let result = difficultSpelling.match(myRegex);
+  // Return ['ss', 'ss']
 ```
 
 #### Match Characters that Occur Zero or More Times
@@ -137,12 +140,14 @@ Using Javascript for test
   let gPhrase = "gut feeling";
   let oPhrase = "over the moon";
   let goRegex = /go*/;
-  soccerWord.match(goRegex);
-  gPhrase.match(goRegex);
-  oPhrase.match(goRegex);
+  soccerWord.match(goRegex); // Return ['goooooooo']
+  gPhrase.match(goRegex); // Return ['g']
+  oPhrase.match(goRegex); // Return null
 
-  let chewieRegex = /Aaaaaaaaaaaaaaaa*/; // Change this line
+  let chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!"; // Change this line
+  let chewieRegex = /Aa*/; // Change this line
   let result = chewieQuote.match(chewieRegex);
+  // Return ['Aaaaaaaaaaaaaaaa']
 ```
 
 #### Find Characters with Lazy Matching
@@ -150,11 +155,11 @@ Using Javascript for test
 ```javascript
   let string = "titanic";
   let regex = /t[a-z]*i/;
-  string.match(regex);
+  string.match(regex); // Return ['titani']
 
   let text = "<h1>Winter is coming</h1>";
   let myRegex = /<.*>/;
-  let result = text.match(myRegex);
+  let result = text.match(myRegex); // Return ['<h1>Winter is coming</h1>']
 ```
 
 #### Find One or More Criminals in a Hunt
@@ -163,7 +168,7 @@ Using Javascript for test
   let crowd = 'P1P2P3P4P5P6P7P8P9';
   let reCriminals = /./;
 
-  let matchedCriminals = crowd.match(reCriminals);
+  let matchedCriminals = crowd.match(reCriminals); // Return ['P']
 ```
 
 #### Match Beginning String Patterns
@@ -171,7 +176,7 @@ Using Javascript for test
 ```javascript
   let rickyAndCal = "Cal and Ricky both like racing";
   let calRegex = /^Cal/;
-  let result = calRegex.test(rickyAndCal);
+  let result = calRegex.test(rickyAndCal); // return true
 ```
 
 #### Match Ending String Patterns
@@ -179,7 +184,7 @@ Using Javascript for test
 ```javascript
   let caboose = "The last car on a train is the caboose";
   let lastRegex = /caboose$/;
-  let result = lastRegex.test(caboose);
+  let result = lastRegex.test(caboose); // return true
 ```
 
 #### Match All Letters and Numbers
@@ -187,7 +192,7 @@ Using Javascript for test
 ```javascript
   let quouteSample = "The five boxing wizards jump quickly";
   let alphabetRegexV2 = /\w/g;
-  let result = quouteSample.match(alphabetRegexV2).length;
+  let result = quouteSample.match(alphabetRegexV2).length; // return 31
 ```
 
 #### Match Everything But Letters and Numbers

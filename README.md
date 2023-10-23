@@ -234,9 +234,61 @@ Using Javascript for test
   let countWhiteSpace = /\s/g;
   let result = sample.match(countWhiteSpace); 
   // return [' ', ' ', ' ', ' ', ' ']
+```
 
+#### Match Non-White-space Characters
+
+```javascript
   let sample = "Whitespace is important in separating words";
   let countWhiteSpace = /\S/g;
   let result = sample.match(countWhiteSpace);
   // retrun ['W', 'h', 'i', 't', 'e', 's', 'p', 'a', 'c', 'e', 'i', 's', 'i', 'm', 'p', 'o', 'r', 't', 'a', 'n', 't', 'i', 'n', 's', 'e', 'p', 'a', 'r', 'a', 't', 'i', 'n', 'g', 'w', 'o', 'r', 'd', 's']
+```
+
+#### Specify Upper and Lower Number of Matches
+
+```javascript
+  
+```
+
+#### Specify Only the Lower Number of Matches
+
+```javascript
+  
+```
+
+#### Specify Exact Number of Matches
+
+```javascript
+  
+```
+
+#### Check for All or None
+
+```javascript
+  
+```
+
+#### Positive and Negative Lookahead
+
+```javascript
+  
+```
+
+#### Reuse Patterns Using Capture Groups
+
+```javascript
+  
+```
+
+#### Use Capture Groups to Search and Replace
+
+```javascript
+  
+```
+
+#### Remove Whitespace from Start and End
+
+```javascript
+  
 ```

@@ -198,7 +198,45 @@ Using Javascript for test
 #### Match Everything But Letters and Numbers
 
 ```javascript
-  let quouteSample = "The five boxing wizards jump quickly";
-  let alphabetRegexV2 = /\w/g;
-  let result = quouteSample.match(alphabetRegexV2).length;
+  let quouteSample = "The five boxing wizards jump quickly.";
+  let alphabetRegexV2 = /\W/g;
+  let result = quouteSample.match(alphabetRegexV2).length; // return 6
+```
+
+#### Match All Numbers
+
+```javascript
+  let numString = "Your sandwich will be $5.00";
+  let numRegex = /\d/g;
+  let result = numString.match(numRegex).length; // return 3
+```
+
+#### Match All Non-Numbers
+
+```javascript
+  let numString = "Your sandwich will be $5.00";
+  let numRegex = /\D/g;
+  let result = numString.match(numRegex).length; // return 24
+```
+
+#### Restrict Possible Usernames
+
+```javascript
+  let username = "JackOfAllTrades";
+  let userCheck = /^[A-za-z]{2,}\d*$/;
+  let result = userCheck.test(username); // return true
+```
+
+#### Match Whitespace
+
+```javascript
+  let sample = "Whitespace is important in separating words";
+  let countWhiteSpace = /\s/g;
+  let result = sample.match(countWhiteSpace); 
+  // return [' ', ' ', ' ', ' ', ' ']
+
+  let sample = "Whitespace is important in separating words";
+  let countWhiteSpace = /\S/g;
+  let result = sample.match(countWhiteSpace);
+  // retrun ['W', 'h', 'i', 't', 'e', 's', 'p', 'a', 'c', 'e', 'i', 's', 'i', 'm', 'p', 'o', 'r', 't', 'a', 'n', 't', 'i', 'n', 's', 'e', 'p', 'a', 'r', 'a', 't', 'i', 'n', 'g', 'w', 'o', 'r', 'd', 's']
 ```

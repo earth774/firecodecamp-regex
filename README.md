@@ -248,47 +248,91 @@ Using Javascript for test
 #### Specify Upper and Lower Number of Matches
 
 ```javascript
-  
+  let ohStr = "ohhh no";
+  let onRegex = /oh{3,6} no/;
+  let result = onRegex.test(ohStr);
+  // return true
 ```
 
 #### Specify Only the Lower Number of Matches
 
 ```javascript
-  
+  let haStr = "Hazzzzah";
+  let haRegex = /z{4,}/;
+  let result = haRegex.test(haStr);
+  // return true
 ```
 
 #### Specify Exact Number of Matches
 
 ```javascript
-  
+  let timStr = "Timmmmber";
+  let timRegex = /Tim{4}ber/;
+  let result = timRegex.test(timStr);
+  // return true
 ```
 
 #### Check for All or None
 
 ```javascript
-  
+  let favWord = "favorite";
+  let favRegex = /favou?rite/;
+  let result = favRegex.test(favWord);
+  // return true
 ```
 
 #### Positive and Negative Lookahead
 
 ```javascript
+  let quit = "qu";
+  let noquit = "qt";
+  let quRegex = /q(?=u)/;
+  let qRegex = /q(?!u)/;
+  quit.match(quRegex); //return ['q']
+  noquit.match(qRegex);  //return ['q']
   
+  let sampleWord = "astronaut";
+  let pwRegex = /(?=\w{5})(?=\D*\d{2})/;
+  let result = pwRegex.test(sampleWord);
 ```
 
 #### Reuse Patterns Using Capture Groups
 
 ```javascript
+  let repeatStr = "regex regex";
+  let repeatRegex = /(\w+)\s\1/;
+  repeatRegex.test(repeatStr); // return true
+  repeatStr.match(repeatRegex);  // return ["regex","regex","regex"]
   
+  let repeatNum = "42 42 42";
+  let reRegex = /^(\d+)\s\1\s\1$/;
+  let result = reRegex.test(repeatNum);
+  // return true
 ```
 
 #### Use Capture Groups to Search and Replace
 
 ```javascript
+  let wrongText = "The sky is silver.";
+  let silverRegex = /silver/;
+  wrongText.replace(silverRegex,"blue");
+  // return "The sky is blue."
   
+  "Code Camp".replace(/(\w+)\s(\w+)/,'$2 $1');
+  // Returns "Camp Code"
+  
+  let huhText = "This sandwich is good.";
+  let fixRegex = /good/;
+  let replaceText = "okey-dokey";
+  let result = huhText.replace(fixRegex,replaceText);
+  // return This sandwich is okey-dokey.
 ```
 
 #### Remove Whitespace from Start and End
 
 ```javascript
-  
+  let hello = "  Hello, World!  ";
+  let wsRegex = /^\s+|\s+$/g;
+  let result = hello.replace(wsRegex,'');
+  // return Hello, World!
 ```
